@@ -13,7 +13,7 @@ export const PORTFOLIO_DATA = {
       role: 'Machine Learning Operations Expert',
       period: 'Aug 2024 – Present',
       location: 'BGC, Manila',
-      logo: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23FF6B35"/><text x="50" y="60" font-size="48" font-weight="bold" text-anchor="middle" fill="white">G</text></svg>',
+      logo: './assets/logos/globe-telecom.svg',
       bullets: [
         'Scaled production ML portfolio: operationalized 6 high-impact models with 100% SLA success rate; maintained 14 BAU models with 100% on-time scoring delivery',
         'Delivered 9 high-priority change requests with 100% success rate and <4-day turnaround; migrated full 14-model portfolio from legacy Airflow to Databricks Workflows + DAB',
@@ -27,7 +27,7 @@ export const PORTFOLIO_DATA = {
       role: 'NLP Developer & Researcher',
       period: 'Sept 2022 – June 2024',
       location: 'Manila, Philippines',
-      logo: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%234A90E2"/><text x="50" y="60" font-size="40" font-weight="bold" text-anchor="middle" fill="white">NU</text></svg>',
+      logo: './assets/logos/national-university.svg',
       bullets: [
         'Designed and deployed advanced NLP models for sentiment analysis, named entity recognition, and topic modeling across Filipino language datasets',
         'Executed full data science lifecycle: data collection, preprocessing, model training (TensorFlow, PyTorch), evaluation, and production deployment',
@@ -44,21 +44,21 @@ export const PORTFOLIO_DATA = {
       degree: 'PhD in Computer Science',
       period: '2025 – Present',
       distinction: 'In Progress',
-      logo: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23C41E3A"/><text x="50" y="65" font-size="32" font-weight="bold" text-anchor="middle" fill="white">TIP</text></svg>'
+      logo: './assets/logos/tip.svg'
     },
     {
       institution: 'Technological Institute of the Philippines',
       degree: 'Master of Science in Computer Science',
       period: '2023 – 2025',
       distinction: 'DOST-ERDT Scholar',
-      logo: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23C41E3A"/><text x="50" y="65" font-size="32" font-weight="bold" text-anchor="middle" fill="white">TIP</text></svg>'
+      logo: './assets/logos/tip.svg'
     },
     {
       institution: 'National University Manila',
       degree: 'BS Computer Science (ML Specialization)',
       period: '2018 – 2022',
       distinction: 'Magna Cum Laude · Dean\'s Lister',
-      logo: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%234A90E2"/><text x="50" y="60" font-size="40" font-weight="bold" text-anchor="middle" fill="white">NU</text></svg>'
+      logo: './assets/logos/national-university.svg'
     }
   ],
 
@@ -115,7 +115,12 @@ export const PORTFOLIO_DATA = {
       pdfPath: 'https://aclanthology.org/2023.paclic-1.79.pdf',
       abstract:
         'First baseline transformer-based NER model for Cebuano language, addressing the gap in low-resource NLP tools for Philippine languages and enabling future research in Cebuano NLP.',
-      keywords: ['NER', 'Cebuano', 'Low-Resource NLP', 'Filipino Languages']
+      keywords: ['NER', 'Cebuano', 'Low-Resource NLP', 'Filipino Languages'],
+      resources: [
+        { label: 'ACL Anthology', href: 'https://aclanthology.org/2023.paclic-1.79/' },
+        { label: 'arXiv', href: 'https://arxiv.org/abs/2310.00679' },
+        { label: 'ResearchGate', href: 'https://www.researchgate.net/publication/389436171_CEBUANER_A_New_Baseline_Cebuano_Named_Entity_Recognition_Model' }
+      ]
     },
     {
       title: 'Filipino Sign Language Recognition Using Long Short-Term Memory and Residual Network Architecture',
@@ -126,7 +131,11 @@ export const PORTFOLIO_DATA = {
       pdfPath: 'https://link.springer.com/chapter/10.1007/978-981-19-2397-5_45',
       abstract:
         'Hybrid architecture combining ResNet for spatial feature extraction and LSTM for temporal sequence modeling to recognize Filipino Sign Language (FSL) phrases with high accuracy.',
-      keywords: ['Sign Language', 'ResNet', 'LSTM', 'Computer Vision', 'Filipino']
+      keywords: ['Sign Language', 'ResNet', 'LSTM', 'Computer Vision', 'Filipino'],
+      resources: [
+        { label: 'Springer', href: 'https://link.springer.com/chapter/10.1007/978-981-19-2397-5_45' },
+        { label: 'ResearchGate', href: 'https://www.researchgate.net/publication/362747600_Filipino_Sign_Language_Recognition_Using_Long_Short-Term_Memory_and_Residual_Network_Architecture' }
+      ]
     },
     {
       title: 'Sign Language Recognition of Selected Filipino Phrases Using LSTM Neural Network',
@@ -137,7 +146,11 @@ export const PORTFOLIO_DATA = {
       pdfPath: 'https://link.springer.com/chapter/10.1007/978-981-19-2397-5_56',
       abstract:
         'LSTM-based sequential model for recognizing pre-defined Filipino Sign Language phrases from video sequences, demonstrating effectiveness of recurrent architectures for sign language understanding.',
-      keywords: ['LSTM', 'Sign Language', 'Sequential Modeling', 'Filipino']
+      keywords: ['LSTM', 'Sign Language', 'Sequential Modeling', 'Filipino'],
+      resources: [
+        { label: 'Springer', href: 'https://link.springer.com/chapter/10.1007/978-981-19-2397-5_56' },
+        { label: 'ResearchGate', href: 'https://www.researchgate.net/publication/362743613_Sign_Language_Recognition_of_Selected_Filipino_Phrases_Using_LSTM_Neural_Network' }
+      ]
     },
     {
       title: 'Filipino Number Sign Language Recognition using Deep Learning',
@@ -148,7 +161,11 @@ export const PORTFOLIO_DATA = {
       pdfPath: null,
       abstract:
         'Deep learning approach for recognizing Filipino Sign Language (FSL) numerals using convolutional neural networks trained on curated dataset of sign language video frames.',
-      keywords: ['Sign Language', 'Deep Learning', 'Computer Vision', 'Filipino']
+      keywords: ['Sign Language', 'Deep Learning', 'Computer Vision', 'Filipino'],
+      resources: [
+        { label: 'ACM Digital Library', href: 'https://dl.acm.org/doi/10.1145/3485768.3485783' },
+        { label: 'ResearchGate', href: 'https://www.researchgate.net/publication/357306934_Filipino_Sign_Language_Recognition_using_Deep_Learning' }
+      ]
     },
     {
       title: 'Understanding Facial Expressions Expressing Hate from Online Short-form Videos',
@@ -159,7 +176,11 @@ export const PORTFOLIO_DATA = {
       pdfPath: 'https://www.researchgate.net/publication/357304314_Understanding_Facial_Expression_Expressing_Hate_from_Online_Short-form_Videos',
       abstract:
         'Analysis of facial expression patterns in online hate speech content using computer vision and sentiment analysis to understand emotional drivers of toxic online behavior.',
-      keywords: ['Facial Expression', 'Hate Speech', 'Online Safety', 'Computer Vision']
+      keywords: ['Facial Expression', 'Hate Speech', 'Online Safety', 'Computer Vision'],
+      resources: [
+        { label: 'ACM Digital Library', href: 'https://dl.acm.org/doi/fullHtml/10.1145/3485768.3485785' },
+        { label: 'ResearchGate', href: 'https://www.researchgate.net/publication/357304314_Understanding_Facial_Expression_Expressing_Hate_from_Online_Short-form_Videos' }
+      ]
     },
     {
       title: 'Sentiment Analysis of Code-Switched Filipino-English Product and Service Reviews Using Transformers-Based Large Language Models',
@@ -170,7 +191,11 @@ export const PORTFOLIO_DATA = {
       pdfPath: 'https://link.springer.com/chapter/10.1007/978-981-99-8349-0_11',
       abstract:
         'Application of transformer-based LLMs for sentiment analysis on code-switched Filipino-English reviews, demonstrating effectiveness of multilingual models on Philippine language data.',
-      keywords: ['Sentiment Analysis', 'Code-Switching', 'NLP', 'LLMs', 'Filipino']
+      keywords: ['Sentiment Analysis', 'Code-Switching', 'NLP', 'LLMs', 'Filipino'],
+      resources: [
+        { label: 'Springer', href: 'https://link.springer.com/chapter/10.1007/978-981-99-8349-0_11' },
+        { label: 'ResearchGate', href: 'https://researchgate.net/publication/378581258_Sentiment_Analysis_of_Code-Switched_Filipino-English_Product_and_Service_Reviews_Using_Transformers-Based_Large_Language_Models' }
+      ]
     },
     {
       title: 'Classifying Emotions of Digital Immigrants while using Software Application based on Facial Features',
