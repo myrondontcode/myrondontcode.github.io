@@ -1,0 +1,25 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mmGradient" x1="0%" y1="0%" x2="135%" y2="135%">
+      <stop offset="0%" style="stop-color:#4f8ef7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c5cfc;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Signature MM mark - like a swoosh but for MM -->
+  <!-- M shape - two vertical strokes with peaks -->
+  <path d="M 40 160 L 40 60 L 65 100 L 90 60 L 90 160" 
+        fill="none" 
+        stroke="url(#mmGradient)" 
+        stroke-width="12" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Second M shape -->
+  <path d="M 110 160 L 110 60 L 135 100 L 160 60 L 160 160" 
+        fill="none" 
+        stroke="url(#mmGradient)" 
+        stroke-width="12" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="py-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" style="stop-color:#3776AB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD43B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="12" cy="12" r="10" fill="url(#py-grad)" opacity="0.2" stroke="url(#py-grad)" stroke-width="1.5"/>
+  <path d="M 9 7 Q 7 7 7 9 L 7 15 Q 7 17 9 17 L 15 17 Q 17 17 17 15 L 17 9 Q 17 7 15 7 Z" 
+        fill="none" stroke="url(#py-grad)" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>

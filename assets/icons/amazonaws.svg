@@ -1,0 +1,5 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FF9900">
+  <circle cx="12" cy="12" r="11" stroke="#FF9900" stroke-width="1" fill="none" opacity="0.3"/>
+  <circle cx="12" cy="12" r="8" fill="#FF9900" opacity="0.2"/>
+  <text x="12" y="14" font-size="8" font-weight="bold" text-anchor="middle" fill="#FF9900">AM</text>
+</svg>
