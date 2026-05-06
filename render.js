@@ -257,6 +257,12 @@ function renderPublications() {
       <div class="publication-abstract">
         ${paper.abstract}
       </div>
+
+      ${paper.resources ? `
+        <div class="publication-resources">
+          ${paper.resources.map((res) => `<a href="${res.href}" target="_blank" rel="noopener noreferrer" class="resource-link">${res.label}</a>`).join('')}
+        </div>
+      ` : ''}
     </div>
   `
     )
