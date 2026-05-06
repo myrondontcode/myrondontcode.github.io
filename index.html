@@ -340,18 +340,18 @@
 
     <!-- Scripts -->
     <script type="module">
-      import { PORTFOLIO_DATA } from './data.js';
+      import { PORTFOLIO_DATA } from './data.js?v=20260506';
 
       // Make data available globally
       window.PORTFOLIO_DATA = PORTFOLIO_DATA;
 
       // Now import and run render
-      import('./render.js').then(() => {
+      import('./render.js?v=20260506').then(() => {
         console.log('Portfolio rendered successfully');
       });
 
       // Import main for interactions
-      import('./main.js');
+      import('./main.js?v=20260506');
     </script>
   </body>
 </html>
