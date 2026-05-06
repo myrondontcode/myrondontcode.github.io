@@ -76,10 +76,18 @@ export const PORTFOLIO_DATA = {
 
   speakingEngagements: [
     {
-      title: 'Databricks & Gen AI: Enterprise Automation Panel',
-      event: 'Tech Summit 2025',
-      date: 'March 2025',
-      description: 'Panel discussion on LLM-driven MLOps automation and cost optimization in enterprise settings',
+      featured: true,
+      title: 'Data Science & Career Journey Talk',
+      event: 'NU MOA STEM Outreach',
+      date: 'May 2024',
+      subtitle: '300+ SHS Students',
+      description: 'Delivered an impactful talk on career journey and opportunities in Data Science to bright STEM students.',
+      testimonial: 'It was a privilege to connect with over 300 bright SHS STEM students. A special shoutout to NU Alumnus and Globe Telecom\'s ML Operations Engineer, Myron Darrel Montefalcon, for delivering an impactful talk on his career journey and highlighting the exciting opportunities in Data Science. His insights truly resonated with the students, encouraging them to consider this path in their higher education.',
+      images: [
+        './images/speaking_photo1.jpg',
+        './images/speaking_photo2.jpg',
+        './images/speaking_photo3.jpg'
+      ],
       link: 'https://www.linkedin.com/feed/update/urn:li:activity:7302149201541373952/'
     }
   ],

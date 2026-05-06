@@ -390,23 +390,107 @@ function renderSpeakingEngagements() {
   const data = checkData();
   if (!data || !data.speakingEngagements) return;
 
-  const html = data.speakingEngagements
-    .map(
-      (engagement, index) => `
-    <a href="${engagement.link}" target="_blank" rel="noopener noreferrer" class="speaking-card reveal" style="--card-index: ${index}">
-      <div class="speaking-content">
-        <h3 class="speaking-title">${engagement.title}</h3>
-        <p class="speaking-event">${engagement.event}</p>
-        <p class="speaking-date">${engagement.date}</p>
-        <p class="speaking-description">${engagement.description}</p>
-        <span class="speaking-cta">View on LinkedIn →</span>
+  const featured = data.speakingEngagements.find(e => e.featured);
+  const others = data.speakingEngagements.filter(e => !e.featured);
+
+  let html = '';
+
+  // Render featured engagement with carousel
+  if (featured && featured.images && featured.images.length > 0) {
+    html += `
+    <div class="speaking-featured reveal">
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="carousel-track">
+            ${featured.images.map((img, idx) => `
+              <div class="carousel-slide ${idx === 0 ? 'active' : ''}" data-slide="${idx}">
+                <img src="${img}" alt="Event photo ${idx + 1}" class="carousel-image" />
+              </div>
+            `).join('')}
+          </div>
+          <button class="carousel-nav carousel-prev" aria-label="Previous photo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="carousel-nav carousel-next" aria-label="Next photo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <div class="carousel-dots">
+            ${featured.images.map((_, idx) => `
+              <button class="dot ${idx === 0 ? 'active' : ''}" data-slide="${idx}" aria-label="Go to photo ${idx + 1}"></button>
+            `).join('')}
+          </div>
+        </div>
       </div>
-    </a>
-  `
-    )
-    .join('');
+      <div class="speaking-featured-content">
+        <div class="speaking-featured-header">
+          <h3 class="speaking-featured-title">${featured.title}</h3>
+          <p class="speaking-featured-event">${featured.event}</p>
+          <p class="speaking-featured-subtitle">${featured.subtitle}</p>
+        </div>
+        <p class="speaking-featured-testimonial">${featured.testimonial}</p>
+        <a href="${featured.link}" target="_blank" rel="noopener noreferrer" class="speaking-featured-cta">
+          Read Full Post on LinkedIn →
+        </a>
+      </div>
+    </div>
+    `;
+  }
+
+  // Render other engagements as cards
+  if (others.length > 0) {
+    html += `<div class="speaking-grid-divider"></div>`;
+    html += others.map((engagement, index) => `
+      <a href="${engagement.link}" target="_blank" rel="noopener noreferrer" class="speaking-card reveal" style="--card-index: ${index}">
+        <div class="speaking-content">
+          <h3 class="speaking-title">${engagement.title}</h3>
+          <p class="speaking-event">${engagement.event}</p>
+          <p class="speaking-date">${engagement.date}</p>
+          <p class="speaking-description">${engagement.description}</p>
+          <span class="speaking-cta">View on LinkedIn →</span>
+        </div>
+      </a>
+    `).join('');
+  }
 
   container.innerHTML = html;
+
+  // Setup carousel navigation
+  if (featured && featured.images && featured.images.length > 0) {
+    setupCarousel(featured.images.length);
+  }
+}
+
+function setupCarousel(slideCount) {
+  let currentSlide = 0;
+  const track = document.getElementById('carousel-track');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+
+  function goToSlide(n) {
+    currentSlide = (n + slideCount) % slideCount;
+    const offset = -currentSlide * 100;
+    track.style.transform = `translateX(${offset}%)`;
+
+    document.querySelectorAll('.carousel-slide').forEach((slide, idx) => {
+      slide.classList.toggle('active', idx === currentSlide);
+    });
+
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentSlide);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+  nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => goToSlide(idx));
+  });
 }
 
 function renderAll() {
