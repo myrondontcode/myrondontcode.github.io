@@ -15,12 +15,19 @@ export const PORTFOLIO_DATA = {
       location: 'BGC, Manila',
       logo: './assets/logos/globe-telecom.svg',
       bullets: [
-        'Scaled production ML portfolio: operationalized 6 high-impact models with 100% SLA success rate; maintained 14 BAU models with 100% on-time scoring delivery',
-        'Delivered 9 high-priority change requests with 100% success rate and <4-day turnaround; migrated full 14-model portfolio from legacy Airflow to Databricks Workflows + DAB',
-        'Achieved PHP 4.58M+ cost optimization across GCP (15.80% Snowflake savings) and infrastructure rationalization; established CloudFinOps governance as GCP/AWS Admin',
-        'Drove business impact: ~PHP 1M incremental revenue via churn prediction & customer segmentation; enabled 3.2K+ B2B leads and continuous dashboarding across CDA profiles'
+        'Operationalized 10+ production models (XGBoost → LSTM deep learning) serving 60M+ subscribers across 3 markets; scaled from 6 to 14 BAU models with 100% on-time delivery',
+
+        'Pioneered Auto-FinOps: automated cost tracking for 56 MLOps models across Snowflake + Databricks. Problem: cost tracking was manual. Solution: built DAB + scheduled workflow to aggregate spend by use case, warehouse, stakeholder. Result: 90% faster, identified PHP 2.1M+ optimization opportunities',
+
+        'Pioneered Project Atlas: automated model card generation via AST + SQL lineage + LLM synthesis. Problem: 40+ pipelines with zero documentation. Solution: DAB that scans code → generates business abstracts + feature inventory auto-magically. Result: eliminates 8-12 hours manual work per model',
+
+        'Migrated full 14-model portfolio from legacy Airflow → Databricks Workflows + DAB; built daily/weekly/monthly ETL scheduling across 40+ pipeline tasks (100% reliability)',
+
+        'Achieved PHP 4.58M annual Snowflake cost savings (15.8% YoY) via infrastructure rationalization; established Cloud FinOps governance as AWS/GCP admin',
+
+        'Drove ~PHP 1M incremental revenue via churn prediction + customer segmentation; enabled 3.2K+ B2B leads via continuous dashboarding'
       ],
-      tags: ['Databricks', 'Snowflake', 'AWS', 'GCP', 'Python', 'MLOps', 'Cloud FinOps', 'Model Governance']
+      tags: ['Databricks', 'Snowflake', 'Airflow', 'AWS', 'GCP', 'Python', 'MLOps', 'Cost Optimization']
     },
     {
       company: 'CHED & National University',
@@ -29,23 +36,19 @@ export const PORTFOLIO_DATA = {
       location: 'Manila, Philippines',
       logo: './assets/logos/national-university.svg',
       bullets: [
-        'Designed and deployed advanced NLP models for sentiment analysis, named entity recognition, and topic modeling across Filipino language datasets',
-        'Executed full data science lifecycle: data collection, preprocessing, model training (TensorFlow, PyTorch), evaluation, and production deployment',
-        'Conducted research capacity building: delivered AI, NLP, and data science workshops to faculty and students across Philippine universities',
-        'Published 15+ peer-reviewed research papers, including work on code-switching detection and low-resource language processing'
+        'Built NLP models for sentiment analysis, NER, and topic modeling on Filipino language datasets—first to tackle Taglish code-switching at scale (F1: 0.89)',
+
+        'Executed full data science lifecycle: data collection → preprocessing → model training (TensorFlow/PyTorch) → eval → production deployment (Streamlit)',
+
+        'Trained 200+ faculty and students across Philippine universities in AI/NLP via in-person workshops; built capacity in low-resource language research',
+
+        'Published 13 peer-reviewed papers (ACL, Springer, PACLIC) on code-switching, sign language recognition, and Philippine language NLP'
       ],
-      tags: ['NLP', 'TensorFlow', 'PyTorch', 'BERT', 'Python', 'Research', 'Capacity Building']
+      tags: ['NLP', 'TensorFlow', 'PyTorch', 'LSTM', 'Transformers', 'Research', 'Filipino Languages']
     }
   ],
 
   education: [
-    {
-      institution: 'Technological Institute of the Philippines',
-      degree: 'PhD in Computer Science',
-      period: '2025 – Present',
-      distinction: 'In Progress',
-      logo: './assets/logos/tip.svg'
-    },
     {
       institution: 'Technological Institute of the Philippines',
       degree: 'Master of Science in Computer Science',
@@ -63,22 +66,23 @@ export const PORTFOLIO_DATA = {
   ],
 
   skills: {
-    mlops: ['Airflow', 'Snowflake', 'AWS', 'GitLab CI/CD', 'Docker', 'Kubernetes'],
-    ml: [
-      'TensorFlow',
-      'PyTorch',
-      'XLM-RoBERTa',
-      'BART',
-      'BERT',
-      'Hugging Face',
-      'Scikit-learn'
-    ],
-    datascience: ['Python', 'Pandas', 'NumPy', 'Seaborn', 'Matplotlib', 'Jupyter'],
-    nlp: ['spaCy', 'NLTK', 'Transformers', 'Streamlit', 'LangChain'],
+    mlops: ['Databricks', 'Snowflake', 'Airflow', 'AWS', 'GCP', 'GitLab CI/CD', 'Docker', 'Kubernetes'],
+    ml: ['TensorFlow', 'PyTorch', 'LSTM', 'XLM-RoBERTa', 'BERT', 'Hugging Face', 'Scikit-learn'],
+    datascience: ['Python', 'Pandas', 'NumPy', 'SQL', 'Jupyter', 'Streamlit'],
+    nlp: ['spaCy', 'NLTK', 'Transformers', 'LangChain'],
     web: ['HTML', 'CSS', 'JavaScript', 'Django', 'Flask', 'Git'],
-    automation: ['n8n', 'Zapier'],
-    exploring: ['Make (Integromat)', 'Databricks', 'LangChain Agents']
+    automation: ['n8n', 'Zapier']
   },
+
+  speakingEngagements: [
+    {
+      title: 'Databricks & Gen AI: Enterprise Automation Panel',
+      event: 'Tech Summit 2025',
+      date: 'March 2025',
+      description: 'Panel discussion on LLM-driven MLOps automation and cost optimization in enterprise settings',
+      link: 'https://www.linkedin.com/feed/update/urn:li:activity:7302149201541373952/'
+    }
+  ],
 
   publications: [
     {
@@ -336,19 +340,19 @@ export const PORTFOLIO_DATA = {
 
   automationWorkflows: [
     {
-      title: 'MLOps Pipeline Design',
+      title: 'Auto-FinOps',
       description:
-        'End-to-end orchestration of model training, validation, and deployment pipelines using Airflow DAGs with automated failure recovery and performance monitoring.'
+        'Automated cost attribution engine. Extracts Snowflake + Databricks spend, fuzzy-matches to model registry, aggregates by use case/warehouse/stakeholder. Runs weekly; 90% faster than manual tracking. Identified PHP 2.1M+ optimization opportunities.'
     },
     {
-      title: 'Data Pipeline Automation',
+      title: 'Project Atlas',
       description:
-        'Snowflake-based data ingestion, transformation, and quality checks with automated alerts for anomalies and data drift detection.'
+        'Automated model documentation. Scans MLOps pipelines via AST + SQL lineage, sends code to LLM for business synthesis, generates model cards + Snowflake table comments. Eliminates 8-12 hours manual work per model; 40+ pipelines in scope.'
     },
     {
-      title: 'CI/CD for ML',
+      title: 'Daily/Weekly/Monthly ETL Scheduling',
       description:
-        'GitLab pipeline automation for model versioning, containerization, testing, and deployment to production with zero-downtime updates.'
+        'Built 40+ automated pipeline tasks across Databricks Workflows + DAB. Runs feature engineering, model training, scoring with daily/weekly/monthly schedules; 100% on-time delivery, automated monitoring + alerts.'
     }
   ]
 };

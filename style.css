@@ -1598,6 +1598,106 @@ button:focus-visible {
 }
 
 /* ============================================================================
+   SPEAKING ENGAGEMENTS SECTION
+   ============================================================================ */
+
+.speaking-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .speaking-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .speaking-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.speaking-card {
+  display: block;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: inherit;
+  animation: var(--reveal-animation);
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@supports not (animation-timeline: view()) {
+  .speaking-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.speaking-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+  border-color: var(--color-border-strong);
+}
+
+.speaking-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.speaking-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+  line-height: 1.4;
+}
+
+.speaking-event {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent-primary);
+  margin-bottom: var(--space-2);
+}
+
+.speaking-date {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+  font-family: var(--font-mono);
+}
+
+.speaking-description {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+}
+
+.speaking-cta {
+  display: inline-block;
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: color var(--transition-base);
+}
+
+.speaking-card:hover .speaking-cta {
+  color: var(--color-accent-secondary);
+}
+
+/* ============================================================================
    CERTIFICATIONS
    ============================================================================ */
 

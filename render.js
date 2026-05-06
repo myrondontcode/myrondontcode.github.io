@@ -383,6 +383,32 @@ function renderCertifications() {
   container.innerHTML = html;
 }
 
+function renderSpeakingEngagements() {
+  const container = document.getElementById('speaking-grid');
+  if (!container) return;
+
+  const data = checkData();
+  if (!data || !data.speakingEngagements) return;
+
+  const html = data.speakingEngagements
+    .map(
+      (engagement, index) => `
+    <a href="${engagement.link}" target="_blank" rel="noopener noreferrer" class="speaking-card reveal" style="--card-index: ${index}">
+      <div class="speaking-content">
+        <h3 class="speaking-title">${engagement.title}</h3>
+        <p class="speaking-event">${engagement.event}</p>
+        <p class="speaking-date">${engagement.date}</p>
+        <p class="speaking-description">${engagement.description}</p>
+        <span class="speaking-cta">View on LinkedIn →</span>
+      </div>
+    </a>
+  `
+    )
+    .join('');
+
+  container.innerHTML = html;
+}
+
 function renderAll() {
   renderExperience();
   renderEducation();
@@ -391,6 +417,7 @@ function renderAll() {
   renderPublicationFilters();
   renderPublications();
   renderAutomationWorkflows();
+  renderSpeakingEngagements();
   renderProjects();
   renderCertifications();
   console.log('✅ All content rendered');
